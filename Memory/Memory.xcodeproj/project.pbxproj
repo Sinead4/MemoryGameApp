@@ -79,12 +79,12 @@
 				23954CCD29017109006E76F6 /* Cardify.swift */,
 				23B3AA3C2903EF6400A443FB /* Pie.swift */,
 				23F8882C2908645B00D2D1FF /* Star.swift */,
-				23F88830290ABC3800D2D1FF /* MemoryFactory.swift */,
 				23954CC728EF063F006E76F6 /* MenuView.swift */,
 				23E90BAD28DC84780074A56F /* MemoryGameView.swift */,
 				23954CC328EDBE20006E76F6 /* EmojiMemoryViewModel.swift */,
 				23F8882E2909538F00D2D1FF /* ShapeMemoryViewModel.swift */,
 				23954CC128EDB7F9006E76F6 /* MemoryGameModel.swift */,
+				23F88830290ABC3800D2D1FF /* MemoryFactory.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";

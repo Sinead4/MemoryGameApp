@@ -17,7 +17,7 @@ struct MenuContentView: View {
             showingSheet.toggle()
         }
         .sheet(isPresented: $showingSheet) {
-            MenuView()
+            MenuView(emojiViewModel: model)
         }
     }
 }
@@ -25,40 +25,36 @@ struct MenuContentView: View {
 struct MenuView: View {
     @Environment(\.dismiss) var dismiss
 
-   var emojiModel: MemoryGameModel<String>
+    var emojiViewModel: EmojiMemoryViewModel
    //var shapeModel: ShapeMemoryViewModel
     var factory = MemoryFactory()
 
     
     var body: some View {
-        /*    Button(action: {
-            withAnimation(.easeInOut){
-                model.resetGame()
-                dismiss()
-            }
-        }, label: {Text("New Game")})
-   */
         Text("Choose Game Content")
         Button (action: {
                 withAnimation(.easeInOut){
-                    factory.choosedMemory = memoryContent.emoji
-                    emojiModel = factory.startCorrectGame()
+                    emojiViewModel.chooseEmoji()
+                    dismiss()
                 }
             }, label: {Text("Emoji")})
         Button (action: {
                 withAnimation(.easeInOut){
-                    factory.choosedMemory = memoryContent.animal
+                    emojiViewModel.chooseAnimals()
+                    dismiss()
                 }
             }, label: {Text("Animals")})
         Button (action: {
                 withAnimation(.easeInOut){
-                    factory.choosedMemory = memoryContent.food
+                    emojiViewModel.chooseFood()
+                    dismiss()
                 }
             }, label: {Text("Food")})
         Button (
             action: {
                 withAnimation(.easeInOut){
-                    factory.choosedMemory = memoryContent.forms
+                    //toDO
+                    //dismiss()
                 }
             }, label: {Text("Forms")})
         

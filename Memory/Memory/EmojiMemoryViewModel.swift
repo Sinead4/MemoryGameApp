@@ -16,7 +16,7 @@ class EmojiMemoryViewModel: ObservableObject{
     var factory = MemoryFactory()
     
     init(){
-        emojiModel = factory.startCorrectGame()
+        emojiModel = factory.createEmojiMemoryGame()
     }
     
     var cards: Array<MemoryGameModel<String>.Card>{
@@ -28,10 +28,20 @@ class EmojiMemoryViewModel: ObservableObject{
         emojiModel.choose(card: card)
     }
     
-    func startGame() -> MemoryGameModel<String>{
+    func chooseEmoji(){
+        emojiModel = factory.createEmojiMemoryGame()
+    }
+    func chooseAnimals(){
+        emojiModel = factory.createAnimalMemoryGame()
+    }
+    func chooseFood(){
+        emojiModel = factory.createFoodMemoryGame()
+    }
+    
+    /*mutating func startGame() -> MemoryGameModel<String>{
         emojiModel = factory.startCorrectGame()
         return emojiModel
     }
     
-    
+   */
 }
