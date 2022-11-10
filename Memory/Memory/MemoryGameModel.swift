@@ -37,7 +37,6 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
     
 //    mutating kennzeichnet das Parameter geändert wird
     mutating func choose(card: Card){
-        print("card chosen: \(card)")
         if let chosenIndex = cards.firstIndex(matching: card),
             !cards[chosenIndex].isFaceUp,
             !cards[chosenIndex].isMatched {

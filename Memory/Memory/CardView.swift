@@ -5,6 +5,10 @@
 //  Created by Sinead on 22.10.22.
 //
 
+
+//Grösse durch Anzahl Karten für Grösse der Karten
+
+
 import SwiftUI
 
 struct CardView: View{
@@ -74,7 +78,7 @@ struct CardView: View{
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryViewModel()
+        let game = EmojiMemoryViewModel(screenWidth: UIScreen.main.bounds.width)
         game.choose(card: game.cards[0])
         return CardView(card: game.cards[0])
     }

@@ -12,11 +12,11 @@ class EmojiMemoryViewModel: ObservableObject{
     
 //    das Published macht das das UI neu gezeichnet wird wenn diese Proberty sich ändert
     @Published private var emojiModel: MemoryGameModel<String>
-
+    
     var factory = MemoryFactory()
     
-    init(){
-        emojiModel = factory.createEmojiMemoryGame()
+    init(screenWidth: CGFloat){
+        emojiModel = factory.createEmojiMemoryGame(level: "Easy", screenWidth: screenWidth)
     }
     
     var cards: Array<MemoryGameModel<String>.Card>{
@@ -28,14 +28,14 @@ class EmojiMemoryViewModel: ObservableObject{
         emojiModel.choose(card: card)
     }
     
-    func chooseEmoji(){
-        emojiModel = factory.createEmojiMemoryGame()
+    func chooseEmoji(level: String,  screenWidth: CGFloat){
+        emojiModel = factory.createEmojiMemoryGame(level: level, screenWidth: screenWidth)
     }
-    func chooseAnimals(){
-        emojiModel = factory.createAnimalMemoryGame()
+    func chooseAnimals(level: String, screenWidth: CGFloat){
+        emojiModel = factory.createAnimalMemoryGame(level: level, screenWidth: screenWidth)
     }
-    func chooseFood(){
-        emojiModel = factory.createFoodMemoryGame()
+    func chooseFood(level: String, screenWidth: CGFloat){
+        emojiModel = factory.createFoodMemoryGame(level: level, screenWidth: screenWidth)
     }
     
     /*mutating func startGame() -> MemoryGameModel<String>{

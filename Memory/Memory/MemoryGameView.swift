@@ -22,7 +22,7 @@ struct MemoryGameView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
                     ForEach(viewModel.cards){ card in
                         CardView(card: card)
-                            .aspectRatio(cardAspectRatio, contentMode: .fit)
+                            .aspectRatio(cardAspectRatio, contentMode: .fill)
                             .onTapGesture {
                                 withAnimation(.linear(duration: rotationDuration)) {
                                     self.viewModel.choose(card: card)
@@ -35,6 +35,13 @@ struct MemoryGameView: View {
         }
     }
     
+    func getColumnWidth(){
+        var screenWidth = UIScreen.main.bounds.width
+        var screenHeight = UIScreen.main.bounds.height
+        
+        
+    }
+    
     // MARK: - Drawing Constants
     private let minimumColumnWidth = Double(65)
     private let rotationDuration = Double(0.75)
@@ -43,7 +50,7 @@ struct MemoryGameView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryViewModel()
+        let game = EmojiMemoryViewModel(screenWidth: UIScreen.main.bounds.width)
         game.choose(card: game.cards[0])
         return MemoryGameView(viewModel: game)
     }
