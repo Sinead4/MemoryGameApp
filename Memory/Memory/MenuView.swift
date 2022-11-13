@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuContentView: View {
     @State private var showingSheet = true
-    var model : EmojiMemoryViewModel
+    @State var model : EmojiMemoryViewModel
 
 
     var body: some View {
@@ -25,10 +25,13 @@ struct MenuContentView: View {
 struct MenuView: View {
     @Environment(\.dismiss) var dismiss
 
-    var emojiViewModel: EmojiMemoryViewModel
-   //var shapeModel: ShapeMemoryViewModel
-    var factory = MemoryFactory()
+          var emojiViewModel: EmojiMemoryViewModel
+//    var shapeModel: ShapeMemoryViewModel
+           var factory = MemoryFactory()
+           var screenWidth = UIScreen.main.bounds.width
     @State var levelSelection : levels = .easy
+    
+//    @State var viewModel: MemoryViewModel
     
     var body: some View {
         Title(title: "Memory Game")
@@ -43,7 +46,10 @@ struct MenuView: View {
         SubTitle(title: "2. Choose your favorite memory deck")
         Button (action: {
                 withAnimation(.easeInOut){
-                    emojiViewModel.chooseEmoji(level: levelSelection.rawValue, screenWidth: UIScreen.main.bounds.width)
+//                    viewModel = MemoryViewModel(choosenMemory: "emoji", level: levelSelection.rawValue, screenWidth: screenWidth)
+//                    emojiViewModel.startCorrectGame(choosenMemory: "emoji", level: levelSelection.rawValue, screenWidth: screenWidth)
+                    //create model
+                    emojiViewModel.chooseEmoji(level: levelSelection.rawValue, screenWidth: screenWidth)
                     dismiss()
                 }
         }, label: {ContentText(title: "Emoji")})
@@ -51,21 +57,23 @@ struct MenuView: View {
         
         Button (action: {
                 withAnimation(.easeInOut){
-                    emojiViewModel.chooseAnimals(level: levelSelection.rawValue, screenWidth: UIScreen.main.bounds.width)
+//                    viewModel = MemoryViewModel(choosenMemory: "animal", level: levelSelection.rawValue, screenWidth: screenWidth)
+                    emojiViewModel.chooseAnimals(level: levelSelection.rawValue, screenWidth: screenWidth)
                     dismiss()
                 }
             }, label: {ContentText(title: "Animals")})
         Button (action: {
                 withAnimation(.easeInOut){
-                    emojiViewModel.chooseFood(level: levelSelection.rawValue, screenWidth: UIScreen.main.bounds.width)
+//                    viewModel = MemoryViewModel(choosenMemory: "food", level: levelSelection.rawValue, screenWidth: screenWidth)
+                    emojiViewModel.chooseFood(level: levelSelection.rawValue, screenWidth: screenWidth)
                     dismiss()
                 }
             }, label: {ContentText(title: "Food")})
         Button (
             action: {
                 withAnimation(.easeInOut){
-                    //toDO
-                    //dismiss()
+//                    shapeModel.chooseForms(level: levelSelection.rawValue, screenWidth: screenWidth)
+//                    dismiss()
                 }
             }, label: {ContentText(title: "Forms")})
         

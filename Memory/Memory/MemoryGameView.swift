@@ -12,20 +12,22 @@ struct MemoryGameView: View {
     
 //    was soll beobachtet werden
     @ObservedObject
-    var viewModel: EmojiMemoryViewModel
+    var emojiViewModel: EmojiMemoryViewModel
     
+    
+    var score = 0
     
     var body: some View {
-        MenuContentView(model: viewModel)
+        MenuContentView(model: emojiViewModel)
         VStack{
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: minimumColumnWidth))]) {
-                    ForEach(viewModel.cards){ card in
+                    ForEach(emojiViewModel.cards){ card in
                         CardView(card: card)
                             .aspectRatio(cardAspectRatio, contentMode: .fill)
                             .onTapGesture {
                                 withAnimation(.linear(duration: rotationDuration)) {
-                                    self.viewModel.choose(card: card)
+                                    self.emojiViewModel.choose(card: card)
                                 }
                         }
                     }
@@ -33,13 +35,8 @@ struct MemoryGameView: View {
             }.padding(.horizontal)
 
         }
-    }
-    
-    func getColumnWidth(){
-        var screenWidth = UIScreen.main.bounds.width
-        var screenHeight = UIScreen.main.bounds.height
-        
-        
+//        Text("Score: \(viewModel.getScore())")
+        Text("Score: \(score)")
     }
     
     // MARK: - Drawing Constants
@@ -50,8 +47,8 @@ struct MemoryGameView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryViewModel(screenWidth: UIScreen.main.bounds.width)
+        let game = EmojiMemoryViewModel(level: "easy", memory: "emoji",screenWidth: UIScreen.main.bounds.width)
         game.choose(card: game.cards[0])
-        return MemoryGameView(viewModel: game)
+        return MemoryGameView(emojiViewModel: game)
     }
 }

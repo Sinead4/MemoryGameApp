@@ -7,34 +7,36 @@
 
 import Foundation
 import SwiftUI
-/*
-class ShapeMemoryViewModel: ObservableObject {
+
+final class ShapeMemoryViewModel: ObservableObject, Shape {
+    func path(in rect: CGRect) -> Path {
+       Path()
+    }
     
-    @Published private var shapesModel: MemoryGameModel<ComparableShape>
+ /*
+    @Published private var model: MemoryGameModel<Shape>
+    var factory = MemoryFactory()
     
     init(){
-        shapesModel = EmojiMemoryViewModel.createFormsMemoryGame()
+        //shapesModel = EmojiMemoryViewModel.createFormsMemoryGame()
     }
     
-    
-    private static func createFormsMemoryGame() -> MemoryGameModel<Shape> {
-        var star = Star(corners: 5, smoothness: 0.45)
-        let forms: Array<any Shape> = [star]
-        return MemoryGameModel<String>(_pairsOfCards: forms.count, _cardContent: {index in return forms[index]})
-        
-    }
     
     var cards: Array<MemoryGameModel<Shape>.Card>{
-        return emojiModel.cards
+        return model.cards
     }
     
     func choose(card: MemoryGameModel<Shape>.Card){
         objectWillChange.send()
-        emojiModel.choose(card: card)
+        model.choose(card: card)
     }
     
-
-    
+    func chooseForms(level: String, screenWidth: CGFloat){
+        model = factory.createFoodMemoryGame(level: level, screenWidth: screenWidth)
+    }
+    */
     
 }
-*/
+
+
+

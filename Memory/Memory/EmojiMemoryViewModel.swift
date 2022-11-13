@@ -6,42 +6,57 @@
 //
 
 import Foundation
-import SwiftUI
+
 
 class EmojiMemoryViewModel: ObservableObject{
     
 //    das Published macht das das UI neu gezeichnet wird wenn diese Proberty sich ändert
-    @Published private var emojiModel: MemoryGameModel<String>
+    @Published private var model: MemoryGameModel<String>
+    var factory: MemoryFactory
     
-    var factory = MemoryFactory()
-    
-    init(screenWidth: CGFloat){
-        emojiModel = factory.createEmojiMemoryGame(level: "Easy", screenWidth: screenWidth)
+    init(level: String, memory: String, screenWidth: CGFloat){
+        self.factory = MemoryFactory()
+        self.model = factory.createEmojiMemoryGame(level: "Easy", screenWidth: screenWidth)
+//        super.init(choosenMemory: memory, level: level, screenWidth: screenWidth)
+//        self.getCorrectMemory()
+        
     }
     
+
     var cards: Array<MemoryGameModel<String>.Card>{
-        return emojiModel.cards
+        return model.cards
     }
     
     func choose(card: MemoryGameModel<String>.Card){
         objectWillChange.send()
-        emojiModel.choose(card: card)
+        model.choose(card: card)
     }
+    
+//    func getCorrectMemory(){
+//        switch whichMemory{
+//        case "emoji":
+//            model = factory.createEmojiMemoryGame(level: gameLevel, screenWidth: width)
+//
+//        case "animal":
+//            model = factory.createAnimalMemoryGame(level: gameLevel, screenWidth: width)
+//
+//        case "food":
+//            model = factory.createFoodMemoryGame(level: gameLevel, screenWidth: width)
+//
+//        default:
+//            print("no memory choosen")
+//        }
+//    }
+    
     
     func chooseEmoji(level: String,  screenWidth: CGFloat){
-        emojiModel = factory.createEmojiMemoryGame(level: level, screenWidth: screenWidth)
+        model = factory.createEmojiMemoryGame(level: level, screenWidth: screenWidth)
     }
     func chooseAnimals(level: String, screenWidth: CGFloat){
-        emojiModel = factory.createAnimalMemoryGame(level: level, screenWidth: screenWidth)
+        model = factory.createAnimalMemoryGame(level: level, screenWidth: screenWidth)
     }
     func chooseFood(level: String, screenWidth: CGFloat){
-        emojiModel = factory.createFoodMemoryGame(level: level, screenWidth: screenWidth)
+        model = factory.createFoodMemoryGame(level: level, screenWidth: screenWidth)
     }
     
-    /*mutating func startGame() -> MemoryGameModel<String>{
-        emojiModel = factory.startCorrectGame()
-        return emojiModel
-    }
-    
-   */
 }

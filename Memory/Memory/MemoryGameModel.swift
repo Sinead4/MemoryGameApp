@@ -13,6 +13,7 @@ import Foundation
 struct MemoryGameModel<CardContent> where CardContent: Equatable {
     
     private (set) var cards = Array<Card>()
+    var score = 0
     
     private var indexOfFaceupCard: Int?{
         get{
@@ -45,6 +46,8 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
+                    score += 10
+                    score += Int(cards[potentialMatchIndex].bonusRemaining*5)
                 }
                 self.cards[chosenIndex].isFaceUp = true
             }
@@ -53,9 +56,12 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             }
         }
     }
-    
-    func startEmojiGame(){
+
+    func getScore()-> Int{
         
+        return score
+        //increase by 10 when a Match is done
+        //increase more when bonustime is not 0
     }
 
 struct Card: Identifiable{

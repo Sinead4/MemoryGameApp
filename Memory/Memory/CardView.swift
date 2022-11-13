@@ -78,7 +78,7 @@ struct CardView: View{
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let game = EmojiMemoryViewModel(screenWidth: UIScreen.main.bounds.width)
+        let game = EmojiMemoryViewModel(level: "easy", memory: "emoji",screenWidth: UIScreen.main.bounds.width)
         game.choose(card: game.cards[0])
         return CardView(card: game.cards[0])
     }

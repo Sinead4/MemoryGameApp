@@ -13,13 +13,15 @@
 		23954CCA28F8347B006E76F6 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23954CC928F8347B006E76F6 /* ArrayExt.swift */; };
 		23954CCE29017109006E76F6 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23954CCD29017109006E76F6 /* Cardify.swift */; };
 		239645F42912C4CF00BED9E2 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239645F32912C4CF00BED9E2 /* Level.swift */; };
+		23964617291D519F00BED9E2 /* MemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23964616291D519F00BED9E2 /* MemoryViewModel.swift */; };
+		239646192920E49500BED9E2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 239646182920E49500BED9E2 /* Launch Screen.storyboard */; };
 		23B3AA3D2903EF6400A443FB /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B3AA3C2903EF6400A443FB /* Pie.swift */; };
 		23B3AA3F2903F23100A443FB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B3AA3E2903F23100A443FB /* CardView.swift */; };
 		23E90BAC28DC84780074A56F /* MemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E90BAB28DC84780074A56F /* MemoryApp.swift */; };
 		23E90BAE28DC84780074A56F /* MemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E90BAD28DC84780074A56F /* MemoryGameView.swift */; };
 		23E90BB028DC847E0074A56F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E90BAF28DC847E0074A56F /* Assets.xcassets */; };
 		23E90BB328DC847E0074A56F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23E90BB228DC847E0074A56F /* Preview Assets.xcassets */; };
-		23F8882D2908645B00D2D1FF /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8882C2908645B00D2D1FF /* Star.swift */; };
+		23F8882D2908645B00D2D1FF /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8882C2908645B00D2D1FF /* Shapes.swift */; };
 		23F8882F2909538F00D2D1FF /* ShapeMemoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8882E2909538F00D2D1FF /* ShapeMemoryViewModel.swift */; };
 		23F88831290ABC3800D2D1FF /* MemoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F88830290ABC3800D2D1FF /* MemoryFactory.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,9 @@
 		23954CC928F8347B006E76F6 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		23954CCD29017109006E76F6 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		239645F32912C4CF00BED9E2 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		23964615291D254300BED9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		23964616291D519F00BED9E2 /* MemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewModel.swift; sourceTree = "<group>"; };
+		239646182920E49500BED9E2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		23B3AA3C2903EF6400A443FB /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		23B3AA3E2903F23100A443FB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		23E90BA828DC84780074A56F /* Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memory.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +43,7 @@
 		23E90BAD28DC84780074A56F /* MemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameView.swift; sourceTree = "<group>"; };
 		23E90BAF28DC847E0074A56F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23E90BB228DC847E0074A56F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		23F8882C2908645B00D2D1FF /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		23F8882C2908645B00D2D1FF /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		23F8882E2909538F00D2D1FF /* ShapeMemoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeMemoryViewModel.swift; sourceTree = "<group>"; };
 		23F88830290ABC3800D2D1FF /* MemoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +78,7 @@
 		23E90BAA28DC84780074A56F /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				23964615291D254300BED9E2 /* Info.plist */,
 				23E90BAB28DC84780074A56F /* MemoryApp.swift */,
 				23E90BAF28DC847E0074A56F /* Assets.xcassets */,
 				23E90BB128DC847E0074A56F /* Preview Content */,
@@ -80,14 +86,16 @@
 				23B3AA3E2903F23100A443FB /* CardView.swift */,
 				23954CCD29017109006E76F6 /* Cardify.swift */,
 				23B3AA3C2903EF6400A443FB /* Pie.swift */,
-				23F8882C2908645B00D2D1FF /* Star.swift */,
+				23F8882C2908645B00D2D1FF /* Shapes.swift */,
 				23954CC728EF063F006E76F6 /* MenuView.swift */,
 				23E90BAD28DC84780074A56F /* MemoryGameView.swift */,
+				23964616291D519F00BED9E2 /* MemoryViewModel.swift */,
 				23954CC328EDBE20006E76F6 /* EmojiMemoryViewModel.swift */,
 				23F8882E2909538F00D2D1FF /* ShapeMemoryViewModel.swift */,
 				23954CC128EDB7F9006E76F6 /* MemoryGameModel.swift */,
 				23F88830290ABC3800D2D1FF /* MemoryFactory.swift */,
 				239645F32912C4CF00BED9E2 /* Level.swift */,
+				239646182920E49500BED9E2 /* Launch Screen.storyboard */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				239646192920E49500BED9E2 /* Launch Screen.storyboard in Resources */,
 				23E90BB328DC847E0074A56F /* Preview Assets.xcassets in Resources */,
 				23E90BB028DC847E0074A56F /* Assets.xcassets in Resources */,
 			);
@@ -171,12 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				239645F42912C4CF00BED9E2 /* Level.swift in Sources */,
-				23F8882D2908645B00D2D1FF /* Star.swift in Sources */,
+				23F8882D2908645B00D2D1FF /* Shapes.swift in Sources */,
 				23954CC828EF063F006E76F6 /* MenuView.swift in Sources */,
 				23B3AA3F2903F23100A443FB /* CardView.swift in Sources */,
 				23F88831290ABC3800D2D1FF /* MemoryFactory.swift in Sources */,
 				23954CC228EDB7F9006E76F6 /* MemoryGameModel.swift in Sources */,
 				23B3AA3D2903EF6400A443FB /* Pie.swift in Sources */,
+				23964617291D519F00BED9E2 /* MemoryViewModel.swift in Sources */,
 				23954CCE29017109006E76F6 /* Cardify.swift in Sources */,
 				23F8882F2909538F00D2D1FF /* ShapeMemoryViewModel.swift in Sources */,
 				23E90BAE28DC84780074A56F /* MemoryGameView.swift in Sources */,
@@ -314,9 +324,10 @@
 				DEVELOPMENT_TEAM = 5VGM7X38LV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Memory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,9 +354,10 @@
 				DEVELOPMENT_TEAM = 5VGM7X38LV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Memory/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

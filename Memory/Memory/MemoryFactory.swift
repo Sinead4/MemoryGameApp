@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MemoryFactory{
     
@@ -26,7 +27,6 @@ class MemoryFactory{
         switch level {
         case "Easy":
             pairs = Int(maxOfPairs / 4)
-            
         case "Medium":
             pairs = Int(maxOfPairs / 2)
         case "Hard":
@@ -84,6 +84,21 @@ class MemoryFactory{
         return MemoryGameModel<String>(_pairsOfCards: pairs, _cardContent: {index in return emojis[index]})
     }
     
+/*    private static func createFormsMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<Shape> {
+        var star = Star(corners: 5, smoothness: 0.45)
+        
+        
+        
+        let forms: Array<any Shape> = [star]
+        
+        let pairs = getAmountPairs(level: level, arrayCount: forms.count, screenWidth: screenWidth)
+        
+        return MemoryGameModel<String>(_pairsOfCards: forms.count, _cardContent: {index in return forms[index]})
+        
+    }
+ */
+    
+
     
 }
 
