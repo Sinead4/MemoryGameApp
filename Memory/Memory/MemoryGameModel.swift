@@ -12,7 +12,6 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable{
     
     private (set) var cards = Array<Card>()
     var score: Int
-//    var viewModel = MemoryViewModel()
     
     private var indexOfFaceupCard: Int?{
         get{

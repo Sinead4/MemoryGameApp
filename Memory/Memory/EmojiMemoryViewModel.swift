@@ -17,8 +17,6 @@ class EmojiMemoryViewModel: ObservableObject{
     init(level: String, memory: String, screenWidth: CGFloat){
         self.factory = MemoryFactory()
         self.model = factory.createEmojiMemoryGame(level: "Easy", screenWidth: screenWidth)
-//        super.init(choosenMemory: memory, level: level, screenWidth: screenWidth)
-//        self.getCorrectMemory()
         print("im in emojiModel")
     }
     
@@ -34,23 +32,6 @@ class EmojiMemoryViewModel: ObservableObject{
         objectWillChange.send()
         model.choose(card: card)
     }
-    
-//    func getCorrectMemory(){
-//        switch whichMemory{
-//        case "emoji":
-//            model = factory.createEmojiMemoryGame(level: gameLevel, screenWidth: width)
-//
-//        case "animal":
-//            model = factory.createAnimalMemoryGame(level: gameLevel, screenWidth: width)
-//
-//        case "food":
-//            model = factory.createFoodMemoryGame(level: gameLevel, screenWidth: width)
-//
-//        default:
-//            print("no memory choosen")
-//        }
-//    }
-    
     
     func chooseEmoji(level: String,  screenWidth: CGFloat){
         model = factory.createEmojiMemoryGame(level: level, screenWidth: screenWidth)

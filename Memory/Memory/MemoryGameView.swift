@@ -12,7 +12,6 @@ struct MemoryGameView: View {
     
 //    was soll beobachtet werden
     @ObservedObject var emojiViewModel: EmojiMemoryViewModel
-//    @ObservedObject var viewModel: MemoryViewModel
 
     var body: some View {
         MenuContentView(model: emojiViewModel)
@@ -33,7 +32,6 @@ struct MemoryGameView: View {
 
         }
         Text("Score: \(emojiViewModel.score)")
-//        Text("Score: \(viewModel.score)")
     }
     
     // MARK: - Drawing Constants

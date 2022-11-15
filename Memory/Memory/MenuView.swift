@@ -25,15 +25,11 @@ struct MenuContentView: View {
 struct MenuView: View {
     @Environment(\.dismiss) var dismiss
 
-        
            var emojiViewModel: EmojiMemoryViewModel
-//    var shapeModel: ShapeMemoryViewModel
            var factory = MemoryFactory()
            var screenWidth = UIScreen.main.bounds.width
     @State var levelSelection : levels = .easy
-           var viewModel = MemoryViewModel()
-    
-//    @State var viewModel: MemoryViewModel
+         
     
     var body: some View {
         Title(title: "Memory Game")
@@ -48,11 +44,7 @@ struct MenuView: View {
         SubTitle(title: "2. Choose your favorite memory deck")
         Button (action: {
                 withAnimation(.easeInOut){
-//                    viewModel = MemoryViewModel(choosenMemory: "emoji", level: levelSelection.rawValue, screenWidth: screenWidth)
-//                    emojiViewModel.startCorrectGame(choosenMemory: "emoji", level: levelSelection.rawValue, screenWidth: screenWidth)
-                    //create model
                     emojiViewModel.chooseEmoji(level: levelSelection.rawValue, screenWidth: screenWidth)
-                    viewModel.memory = "emoji"
                     dismiss()
                 }
         }, label: {ContentText(title: "Emoji")})
@@ -60,17 +52,13 @@ struct MenuView: View {
         
         Button (action: {
                 withAnimation(.easeInOut){
-//                    viewModel = MemoryViewModel(choosenMemory: "animal", level: levelSelection.rawValue, screenWidth: screenWidth)
                     emojiViewModel.chooseAnimals(level: levelSelection.rawValue, screenWidth: screenWidth)
-                    viewModel.memory = "animals"
                     dismiss()
                 }
             }, label: {ContentText(title: "Animals")})
         Button (action: {
                 withAnimation(.easeInOut){
-//                    viewModel = MemoryViewModel(choosenMemory: "food", level: levelSelection.rawValue, screenWidth: screenWidth)
                     emojiViewModel.chooseFood(level: levelSelection.rawValue, screenWidth: screenWidth)
-                    viewModel.memory = "food"
                     dismiss()
                 }
             }, label: {ContentText(title: "Food")})
@@ -78,7 +66,6 @@ struct MenuView: View {
             action: {
                 withAnimation(.easeInOut){
 //                    shapeModel.chooseForms(level: levelSelection.rawValue, screenWidth: screenWidth)
-                    viewModel.memory = "shape"
 //                    dismiss()
                 }
             }, label: {ContentText(title: "Forms")})

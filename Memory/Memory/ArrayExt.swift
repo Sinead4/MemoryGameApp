@@ -26,12 +26,3 @@ extension Array {
         count == 1 ? self.first: nil
     }
 }
-
-/*extension Equatable{
- 
-     static func == (lhs: Star, rhs: Star) -> Bool {
-     return lhs.corners == rhs.corners && lhs.smoothness == rhs.smoothness
-     }
- }//Greatness anschauen
- 
-*/
