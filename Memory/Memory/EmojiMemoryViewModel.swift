@@ -19,9 +19,12 @@ class EmojiMemoryViewModel: ObservableObject{
         self.model = factory.createEmojiMemoryGame(level: "Easy", screenWidth: screenWidth)
 //        super.init(choosenMemory: memory, level: level, screenWidth: screenWidth)
 //        self.getCorrectMemory()
-        
+        print("im in emojiModel")
     }
     
+    var score : Int {
+        model.score
+    }
 
     var cards: Array<MemoryGameModel<String>.Card>{
         return model.cards

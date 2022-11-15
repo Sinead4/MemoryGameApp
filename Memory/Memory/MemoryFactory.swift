@@ -22,13 +22,13 @@ class MemoryFactory{
   */
     func getAmountPairs(level: String, arrayCount: Int,  screenWidth: CGFloat)-> Int {
         var pairs: Int
-        var maxOfPairs = screenWidth / 30
+        let boundary = screenWidth / 30
         
         switch level {
         case "Easy":
-            pairs = Int(maxOfPairs / 4)
+            pairs = Int(boundary / 4)
         case "Medium":
-            pairs = Int(maxOfPairs / 2)
+            pairs = Int(boundary / 2)
         case "Hard":
             pairs = arrayCount
         default:
@@ -53,7 +53,7 @@ class MemoryFactory{
     
     func createEmojiMemoryGame(level: String,  screenWidth: CGFloat) -> MemoryGameModel<String> {
         
-        var emojis: Array<String> = ["🥳","🤩","🥸","😀","🤪","😅","🥹","😖","😤",
+        let emojis: Array<String> = ["🥳","🤩","🥸","😀","🤪","😅","🥹","😖","😤",
                                      "😋","😉","🤨","🧐","😂","😢","😶","😬","🥱",
                                      "😷","🤯","🥰","😓","😭","🤥","🤠","🤫","🤒",
                                      "😡","🙃","😍","😱","🥶","🫣","🤐"]
@@ -64,7 +64,7 @@ class MemoryFactory{
     }
     
       func createAnimalMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<String> {
-        var emojis: Array<String> = ["🐸","🐣","🦊","🦖","🦕","🦑","🦧","🐶","🐱",
+        let emojis: Array<String> = ["🐸","🐣","🦊","🦖","🦕","🦑","🦧","🐶","🐱",
                                      "🐹","🐰","🐷","🐥","🐨","🐼","🐮","🦁","🕷",
                                      "🦋","🐝","🐠","🐳","🐬","🦥","🦩","🦚","🐿",
                                      "🦔","🦦","🦇","🦄","🐞","🐌"]
@@ -74,7 +74,7 @@ class MemoryFactory{
     }
     
       func createFoodMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<String> {
-        var emojis: Array<String> = ["🍓","🥨","🌶","🍔","🥑","🍎","🍋","🍌","🍉","🧅",
+        let emojis: Array<String> = ["🍓","🥨","🌶","🍔","🥑","🍎","🍋","🍌","🍉","🧅",
                                      "🥐","🍠","🧀","🍕","🥞","🫐","🍑","🥪","🥗","🍰",
                                      "🍪","🍩","🍣","🍍","🍒","🥦","🌽","🍇","🧄","🥒",
                                      "🥓","🌮","🍫","🍗","🥥"]
@@ -83,6 +83,7 @@ class MemoryFactory{
           
         return MemoryGameModel<String>(_pairsOfCards: pairs, _cardContent: {index in return emojis[index]})
     }
+    
     
 /*    private static func createFormsMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<Shape> {
         var star = Star(corners: 5, smoothness: 0.45)

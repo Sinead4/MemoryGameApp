@@ -12,7 +12,6 @@ struct MemoryApp: App {
     
     var body: some Scene {
         WindowGroup {
-            
             MemoryGameView(emojiViewModel: EmojiMemoryViewModel(level: "easy", memory: "emoji", screenWidth: UIScreen.main.bounds.width))
         }
     }

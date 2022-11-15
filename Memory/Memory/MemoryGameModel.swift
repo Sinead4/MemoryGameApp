@@ -6,14 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
-//Enum einer factory übergeben
-//beim model initialisier eingeben 
-
-struct MemoryGameModel<CardContent> where CardContent: Equatable {
+struct MemoryGameModel<CardContent> where CardContent: Equatable{
     
     private (set) var cards = Array<Card>()
-    var score = 0
+    var score: Int
+//    var viewModel = MemoryViewModel()
     
     private var indexOfFaceupCard: Int?{
         get{
@@ -32,12 +31,18 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
             let content = _cardContent(index)
             cards.append(Card(id: index*3, content: content))
             cards.append(Card(id: index*3+1, content: content))
+            
         }
         cards.shuffle()
+        score = 0
+    }
+    
+    init(){
+        score = 0
     }
     
 //    mutating kennzeichnet das Parameter geändert wird
-    mutating func choose(card: Card){
+     mutating func choose(card: Card){
         if let chosenIndex = cards.firstIndex(matching: card),
             !cards[chosenIndex].isFaceUp,
             !cards[chosenIndex].isMatched {
@@ -48,6 +53,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
                     cards[potentialMatchIndex].isMatched = true
                     score += 10
                     score += Int(cards[potentialMatchIndex].bonusRemaining*5)
+                    print("score in model is:")
+                    print(score)
+
                 }
                 self.cards[chosenIndex].isFaceUp = true
             }
@@ -57,12 +65,7 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable {
         }
     }
 
-    func getScore()-> Int{
-        
-        return score
-        //increase by 10 when a Match is done
-        //increase more when bonustime is not 0
-    }
+ 
 
 struct Card: Identifiable{
     var isFaceUp: Bool = false {

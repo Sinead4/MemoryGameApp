@@ -6,9 +6,33 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MemoryViewModel: ObservableObject{
 
+    var memory = "emoji"
+    var score : Int {
+        model.score
+    }
+
+    @Published var model: MemoryGameModel<String>
+//    @ObservedObject var model: MemoryGameModel<Shape>
+    
+    
+    init(){
+        model = MemoryGameModel<String>()
+        
+//        if(memory == "shape"){
+//            objectWillChange.send()
+//            score = MemoryGameModel<CardContent: Shape>().getScore()
+//        }
+//        objectWillChange.send()
+        
+        print("Score ist in init: ")
+//        print(score)
+    }
+    
+    
 //    var model = MemoryGameModel<CardContent>(_pairsOfCards: 3, _cardContent: <#(Int) -> _#>)
 //    var whichMemory: String
 //    var width: CGFloat
@@ -42,9 +66,28 @@ class MemoryViewModel: ObservableObject{
  //       viewModel.choose(card: card)
  //   }
     
-//    func getScore()-> Int{
-//        return model.getScore()
+//    func updateScore(){
+//        score = (memory=="shape") ? 0 : MemoryGameModel<String>().score
+//        print("in updateScore score is:")
+//        print(score)
 //    }
     
     
+    
+//    func getScore()-> Int{
+//        if(memory == "shape"){
+//            objectWillChange.send()
+////            score = MemoryGameModel<CardContent: Shape>().getScore()
+////            return score
+//        }
+//        objectWillChange.send()
+//        print("Score ist: ")
+//        print(MemoryGameModel<String>().score)
+//        score = MemoryGameModel<String>().score
+//        return score
+//    }
+
 }
+
+
+

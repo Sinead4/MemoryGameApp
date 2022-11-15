@@ -11,12 +11,9 @@ import SwiftUI
 struct MemoryGameView: View {
     
 //    was soll beobachtet werden
-    @ObservedObject
-    var emojiViewModel: EmojiMemoryViewModel
-    
-    
-    var score = 0
-    
+    @ObservedObject var emojiViewModel: EmojiMemoryViewModel
+//    @ObservedObject var viewModel: MemoryViewModel
+
     var body: some View {
         MenuContentView(model: emojiViewModel)
         VStack{
@@ -29,14 +26,14 @@ struct MemoryGameView: View {
                                 withAnimation(.linear(duration: rotationDuration)) {
                                     self.emojiViewModel.choose(card: card)
                                 }
-                        }
+                            }
                     }
                 }.foregroundColor(Color.blue)
             }.padding(.horizontal)
 
         }
-//        Text("Score: \(viewModel.getScore())")
-        Text("Score: \(score)")
+        Text("Score: \(emojiViewModel.score)")
+//        Text("Score: \(viewModel.score)")
     }
     
     // MARK: - Drawing Constants
