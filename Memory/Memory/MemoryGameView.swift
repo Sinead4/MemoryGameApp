@@ -31,7 +31,11 @@ struct MemoryGameView: View {
             }.padding(.horizontal)
 
         }
-        Text("Score: \(emojiViewModel.score)")
+        HStack(spacing: 20){
+            Text("Score: \(emojiViewModel.score)")
+            Text("Highscore: \(emojiViewModel.highScore)")
+        }
+        
     }
     
     // MARK: - Drawing Constants

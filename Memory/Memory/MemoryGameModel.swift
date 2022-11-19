@@ -13,6 +13,9 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable{
     private (set) var cards = Array<Card>()
     var score: Int
     
+    let userDefaults = UserDefaults.standard
+    var highScore: Int = 0
+    
     private var indexOfFaceupCard: Int?{
         get{
             cards.indices.filter{cards[$0].isFaceUp}.only
@@ -34,10 +37,13 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable{
         }
         cards.shuffle()
         score = 0
+        highScore = userDefaults.integer(forKey: "highScore")
     }
     
     init(){
         score = 0
+        highScore = userDefaults.integer(forKey: "highScore")
+
     }
     
 //    mutating kennzeichnet das Parameter geändert wird
@@ -52,8 +58,10 @@ struct MemoryGameModel<CardContent> where CardContent: Equatable{
                     cards[potentialMatchIndex].isMatched = true
                     score += 10
                     score += Int(cards[potentialMatchIndex].bonusRemaining*5)
-                    print("score in model is:")
-                    print(score)
+                    if(score > highScore){
+                        userDefaults.set(score, forKey: "highScore")
+                        highScore = userDefaults.integer(forKey: "highScore")
+                    }
 
                 }
                 self.cards[chosenIndex].isFaceUp = true

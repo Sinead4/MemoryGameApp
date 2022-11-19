@@ -23,6 +23,10 @@ class EmojiMemoryViewModel: ObservableObject{
     var score : Int {
         model.score
     }
+    
+    var highScore: Int {
+        model.highScore
+    }
 
     var cards: Array<MemoryGameModel<String>.Card>{
         return model.cards
