@@ -82,7 +82,7 @@ struct Star: Shape, Equatable {
             return lhs.color == rhs.color && lhs.corners == rhs.corners
         }
     }
-/*
+
 struct Polygon: Shape, Equatable{
     var sides: Int
     var color: Color
@@ -152,7 +152,7 @@ fileprivate func CreateRandomPolygon(sides:Int,radius r: Double,center c:CGPoint
     vertices.append(vertices[0])
     return vertices
 }
-  */
+  
 extension Shape where Self : Equatable {
     
     func isEqualTo(other: any Shape) -> Bool {

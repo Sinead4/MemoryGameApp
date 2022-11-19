@@ -8,10 +8,8 @@
 import Foundation
 import SwiftUI
 
-final class ShapeMemoryViewModel: ObservableObject, Shape {
-    func path(in rect: CGRect) -> Path {
-       Path()
-    }
+final class ShapeMemoryViewModel: ObservableObject {
+  
     
  /*
     @Published private var model: MemoryGameModel<Shape>

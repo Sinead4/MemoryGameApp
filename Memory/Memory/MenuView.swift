@@ -32,52 +32,65 @@ struct MenuView: View {
          
     
     var body: some View {
-        Title(title: "Memory Game")
-        SubTitle(title: "1. Choose your level")
-        Picker("", selection: $levelSelection) {
+        ScrollView{
+            VStack(spacing: 10){
+                Title(title: "Memory Game")
+                SubTitle(title: "1. Choose your level")
+                Picker("", selection: $levelSelection) {
                     ForEach(levels.allCases, id: \.self) { option in
                         Text(option.rawValue)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
                     .padding()
-        
-        SubTitle(title: "2. Choose your favorite memory deck")
-        Button (action: {
-                withAnimation(.easeInOut){
-                    emojiViewModel.chooseEmoji(level: levelSelection.rawValue, screenWidth: screenWidth)
+                
+                SubTitle(title: "2. Choose your favorite memory deck")
+                Button (action: {
+                    withAnimation(.easeInOut){
+                        emojiViewModel.chooseEmoji(level: levelSelection.rawValue, screenWidth: screenWidth)
+                        dismiss()
+                    }
+                }, label: {ContentText(title: "Emoji")})
+                .buttonStyle(MemoryButton())
+                
+                Button (action: {
+                    withAnimation(.easeInOut){
+                        emojiViewModel.chooseAnimals(level: levelSelection.rawValue, screenWidth: screenWidth)
+                        dismiss()
+                    }
+                }, label: {ContentText(title: "Animals")})
+                .buttonStyle(MemoryButton())
+                
+                Button (action: {
+                    withAnimation(.easeInOut){
+                        emojiViewModel.chooseFood(level: levelSelection.rawValue, screenWidth: screenWidth)
+                        dismiss()
+                    }
+                }, label: {ContentText(title: "Food")})
+                .buttonStyle(MemoryButton())
+                
+                Button (
+                    action: {
+                        withAnimation(.easeInOut){
+                            //                    shapeModel.chooseForms(level: levelSelection.rawValue, screenWidth: screenWidth)
+                            //                    dismiss()
+                        }
+                    }, label: {ContentText(title: "Forms")})
+                .buttonStyle(MemoryButton()).disabled(true)
+                
+                
+                
+                Button("Close") {
                     dismiss()
                 }
-        }, label: {ContentText(title: "Emoji")})
-        .buttonStyle(GrowingButton())
-        
-        Button (action: {
-                withAnimation(.easeInOut){
-                    emojiViewModel.chooseAnimals(level: levelSelection.rawValue, screenWidth: screenWidth)
-                    dismiss()
-                }
-            }, label: {ContentText(title: "Animals")})
-        Button (action: {
-                withAnimation(.easeInOut){
-                    emojiViewModel.chooseFood(level: levelSelection.rawValue, screenWidth: screenWidth)
-                    dismiss()
-                }
-            }, label: {ContentText(title: "Food")})
-        Button (
-            action: {
-                withAnimation(.easeInOut){
-//                    shapeModel.chooseForms(level: levelSelection.rawValue, screenWidth: screenWidth)
-//                    dismiss()
-                }
-            }, label: {ContentText(title: "Forms")})
-        
-        
-        
-        Button("Close") {
-            dismiss()
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(10)
+                
+                .background(.black)
+                .cornerRadius(10)
+                
+            }
         }
-        .font(.title)
-        .padding()
-        .background(.black)
     }
 }
 
@@ -120,14 +133,13 @@ struct ContentText: View {
   }
 }
 
-struct GrowingButton: ButtonStyle {
+struct MemoryButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding()
-            .background(.blue)
+            .padding(5)
+            .background(.mint)
             .foregroundColor(.white)
-            .clipShape(Capsule())
-            .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+            .cornerRadius(5)
+            .frame(maxWidth: .infinity)
     }
 }

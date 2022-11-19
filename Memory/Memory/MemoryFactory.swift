@@ -10,18 +10,17 @@ import SwiftUI
 
 class MemoryFactory{
     
-    var choosedMemory = memoryContent.food
     var amountOfPairs = 0
     
     func getAmountPairs(level: String, arrayCount: Int,  screenWidth: CGFloat)-> Int {
         var pairs: Int
-        let boundary = screenWidth / 30
+        let boundary = screenWidth / 20
         
         switch level {
         case "Easy":
-            pairs = Int(boundary / 4)
+            pairs = Int(boundary / 3)
         case "Medium":
-            pairs = Int(boundary / 2)
+            pairs = Int(boundary / 1.5)
         case "Hard":
             pairs = arrayCount
         default:
@@ -43,50 +42,38 @@ class MemoryFactory{
         return MemoryGameModel<String>(_pairsOfCards: pairs, _cardContent: {index in return emojis[index]})
     }
     
-      func createAnimalMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<String> {
+    func createAnimalMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<String> {
         let emojis: Array<String> = ["🐸","🐣","🦊","🦖","🦕","🦑","🦧","🐶","🐱",
                                      "🐹","🐰","🐷","🐥","🐨","🐼","🐮","🦁","🕷",
                                      "🦋","🐝","🐠","🐳","🐬","🦥","🦩","🦚","🐿",
                                      "🦔","🦦","🦇","🦄","🐞","🐌"]
         let pairs = getAmountPairs(level: level, arrayCount: emojis.count, screenWidth: screenWidth)
-          
+        
         return MemoryGameModel<String>(_pairsOfCards: pairs, _cardContent: {index in return emojis[index]})
     }
     
-      func createFoodMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<String> {
+    func createFoodMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<String> {
         let emojis: Array<String> = ["🍓","🥨","🌶","🍔","🥑","🍎","🍋","🍌","🍉","🧅",
                                      "🥐","🍠","🧀","🍕","🥞","🫐","🍑","🥪","🥗","🍰",
                                      "🍪","🍩","🍣","🍍","🍒","🥦","🌽","🍇","🧄","🥒",
                                      "🥓","🌮","🍫","🍗","🥥"]
-          
+        
         let pairs = getAmountPairs(level: level, arrayCount: emojis.count, screenWidth: screenWidth)
-          
+        
         return MemoryGameModel<String>(_pairsOfCards: pairs, _cardContent: {index in return emojis[index]})
     }
     
     
-/*    private static func createFormsMemoryGame(level: String, screenWidth: CGFloat) -> MemoryGameModel<Shape> {
-        var star = Star(corners: 5, smoothness: 0.45)
+    func createFormsMemoryGame(level: String, screenWidth: CGFloat) {
+        //       let starRed = Star(corners: 5, smoothness: 0.45, color: Color.red) as any Equatable
+        //       let starBlue = Star(corners: 5, smoothness: 0.45, color: Color.blue) as any Equatable
+        //
+        //        let forms: Array<(any Equatable)> = [starRed, starBlue]
+        //
+        //        let pairs = getAmountPairs(level: level, arrayCount: forms.count, screenWidth: screenWidth)
         
-        
-        
-        let forms: Array<any Shape> = [star]
-        
-        let pairs = getAmountPairs(level: level, arrayCount: forms.count, screenWidth: screenWidth)
-        
-        return MemoryGameModel<String>(_pairsOfCards: forms.count, _cardContent: {index in return forms[index]})
-        
+        //        return MemoryGameModel(_pairsOfCards: forms.count,
+        //                               _cardContent: {index in
+        //            return forms[index] as! cardItem})
     }
- */
-    
-
-    
-}
-
-enum memoryContent{
-    case animal
-    case food
-    case forms
-    case emoji
-    
 }

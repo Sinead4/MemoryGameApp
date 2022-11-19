@@ -6,9 +6,6 @@
 //
 
 
-//Grösse durch Anzahl Karten für Grösse der Karten
-
-
 import SwiftUI
 
 struct CardView: View{
